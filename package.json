@@ -1,0 +1,25 @@
+{
+  "name": "codealert",
+  "version": "1.0.0",
+  "description": "Email alert when your code block finishes running Edit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardloo/CodeAlert.git"
+  },
+  "author": "Leonard Loo (leonard.loo.ks@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "nodemailer": "4.0.1",
+    "fs": "*",
+    "body-parser": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/leonardloo/CodeAlert/issues"
+  },
+  "homepage": "https://github.com/leonardloo/CodeAlert#readme"
+}
