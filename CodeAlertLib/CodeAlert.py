@@ -90,9 +90,9 @@ def pingd(calert, options):
     _calert = copy.copy(calert)
     _calert.set_options(options)
     def ping_decorator(func):
-        def func_wrapper():
+        def func_wrapper(*args, **kwargs):
             try:
-                func()
+                func(*args, **kwargs)
                 _calert.ping()
             except Exception as e:
                 _calert.ping('Error: ' + str(e))
