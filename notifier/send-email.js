@@ -18,7 +18,6 @@ module.exports = function sendEmail(to, subject, message, email, pass) {
   });
 
   transport.sendMail(mailOptions, (error) => {
-    console.log(mailOptions);
     if (error) {
       console.log(error);
     }

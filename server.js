@@ -16,16 +16,6 @@ app.get('/', function (req, res) {
 	res.render('index.html');
 })
 
-app.get('/sendEmail/', function(req, res) {
-  let to = req.query.to;
-  var subj = req.query.subject;
-  // Prepend forma-auto to subject
-  let subject = 'forma-auto: ' + subj;
-  let message = req.query.message;
-  sendEmail(to, subject, message);
-  console.log('Email sent.');
-});
-
 app.post('/email', function(req, res) {
 	var to = req.body.email;
 	var logtext = req.body.logtext;
