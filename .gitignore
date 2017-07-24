@@ -4,3 +4,5 @@
 .ipynb_checkpoints
 **/.pyc
 **/.DS_Store
+**/__pycache__
+**/package-lock.json
