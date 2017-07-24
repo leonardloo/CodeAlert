@@ -26,6 +26,12 @@ class CodeAlert:
         return self
         
     def __init__(self):
+        ################################################
+        # Change this to your self hosted server IP, 
+        # where your node.js server resides
+        self.BASE_URL = 'http://52.207.228.129:3001'
+        ################################################
+
         self.ENABLED = True
         self.SOUND_ENABLED = False
         self.SOUND_WORD = ""
@@ -67,10 +73,8 @@ class CodeAlert:
             if len(self.emails) == 0:
                 print('Please enter recipient emails for ping')
                 return
-            base_url = 'http://52.207.228.129:3001'
-            # base_url = 'http://localhost:3001'
             email_url = 'email'
-            final_url="{0}/{1}".format(base_url,email_url)
+            final_url="{0}/{1}".format(self.BASE_URL, email_url)
             for email in self.emails:
                 logtext_to_use = self.logtext if not logtxt else logtxt
                 payload = {'email': email, 'logtext': logtext_to_use}
