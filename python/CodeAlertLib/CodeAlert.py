@@ -32,6 +32,7 @@ class CodeAlert:
         self.EMAIL_ENABLED = True
         self.emails = []
         self.logtext = "Your code has finished running!"
+        self.hasError = False
         
     def options(self):
         return {'on': self.ENABLED, 'sound_enabled': self.SOUND_ENABLED, 
@@ -67,6 +68,7 @@ class CodeAlert:
                 print('Please enter recipient emails for ping')
                 return
             base_url = 'http://52.207.228.129:3001'
+            # base_url = 'http://localhost:3001'
             email_url = 'email'
             final_url="{0}/{1}".format(base_url,email_url)
             for email in self.emails:
@@ -77,11 +79,13 @@ class CodeAlert:
                 
         if self.SOUND_ENABLED:
             try: # Mac
-                if self.SOUND_WORD:
+                if self.hasError: 
+                    os.system('say "error"')
+                elif self.SOUND_WORD:
                     os.system('say "' + self.SOUND_WORD + '"')
                 else:
-                    os.system('afplay ./Glass.aiff')
-            except: # Windows (Might not work)
+                    os.system('afplay /System/Library/Sounds/Glass.aiff')
+            except: # Windows (Might not work if terminal bell is disabled)
                 print('\a')
      
 # Ping decorator
@@ -95,6 +99,7 @@ def pingd(calert, options):
                 func(*args, **kwargs)
                 _calert.ping()
             except Exception as e:
+                _calert.hasError = True
                 _calert.ping('Error: ' + str(e))
         return func_wrapper
     return ping_decorator
