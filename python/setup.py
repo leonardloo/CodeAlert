@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='codealert',
-    version='1.0.1b1',
+    version='1.0.2b1',
     description='Slack/Email/Sound alert when your code block finishes running',
     url='https://github.com/leonardloo/CodeAlert',
     author='Leonard Loo',
