@@ -113,7 +113,7 @@ class CodeAlert:
 					if len(self.slack_url) == 0:
 						print('Please enter your Slack url for ping. You may obtain it from https://my.slack.com/services/new/incoming-webhook/')
 						return
-					payload = {'text': logtext_to_use}
+					payload = {'text': logtext_to_use, 'username': 'CodeAlert', 'icon_emoji': ':tada:'}
 					headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 					response = requests.post(self.slack_url, headers=headers, data=json.dumps(payload))
 		 
