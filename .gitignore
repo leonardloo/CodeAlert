@@ -1,6 +1,5 @@
 **/credentials.txt
 **/node_modules/
-**/.pyc
 .ipynb_checkpoints
 **/.pyc
 **/.DS_Store
@@ -9,3 +8,4 @@
 **/dist/
 **/build/
 **/codealert.egg-info
+**/**/.pyc
