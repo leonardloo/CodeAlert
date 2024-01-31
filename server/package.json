@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "*",
-    "nodemailer": "4.0.1",
+    "nodemailer": "6.9.8",
     "fs": "*",
     "body-parser": "*"
   },
